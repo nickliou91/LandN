@@ -1,0 +1,80 @@
+
+<% provide(:title, "Home") %> 
+
+<div class ="center jumbotron">
+	<div id="myCarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+            	<div>
+               <%= link_to image_tag("1.jpg", size:"700x500", alt: "Rails logo"),'#' %> 
+            	</div>
+         			<div class="carousel-caption">
+         			</div>
+     
+           	</div>
+            <div class="item">
+               <div> <%= link_to image_tag("1603.jpg",size:"700x500", alt: "Rails logo"), '#' %>
+               </div>
+                <div class="carousel-caption">
+                
+                </div>
+            </div>
+            <div class="item">
+            	<div>
+									<%= link_to image_tag("2.jpg",size:"700x500", alt: "Rails logo"),'#' %>   
+							</div>              
+							<div class="carousel-caption">
+               </div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+
+	<!-- <div class="owl-carousel custom_carousel" >
+		
+		<div> <%= link_to image_tag("1.jpg", size:"500x250", alt: "Rails logo"),
+            '#' %>   </div> 
+		<div> <%= link_to image_tag("1603.jpg",size:"500x250", alt: "Rails logo"),
+            '#' %>   </div>
+		<div> <%= link_to image_tag("2.jpg",size:"500x250", alt: "Rails logo"),
+            '#' %>   </div>
+	</div> -->
+
+
+ <div class="row">
+  <div class="col-sm-4">
+    <h3>Column 1</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  </div>
+  <div class="col-sm-4">
+    <h3>Column 2</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  </div>
+  <div class="col-sm-4">
+    <h3>Column 3</h3>        
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  </div>
+
+ </div>
+
+
+<!-- <h1>L And N Office Systems Sdn Bhd </h1>
+<p>Find me in app/views/static_pages/home.html.erb</p> -->
