@@ -1,0 +1,32 @@
+<%= form_for(@product) do |f| %>
+<!--   <input type="hidden" name="referrer" value="LABEL" />
+  <input type="hidden" id="callback_url" name="exit" value="https://label-fashionistas.herokuapp.com/photos" />
+  <input type="hidden" name="method" value="GET" />
+  <input type="hidden" name="target" value="https://label-fashionistas.herokuapp.com/photos/pixlr" />
+  <input type="hidden" name="locktarget" value="true" />
+  <input type="hidden" name="locktitle" value="true" />
+  <input type="hidden" name="locktype" value="jpg" />
+  <input type="hidden" name="quality" value="100" />
+ -->
+ 
+  <div class="title">
+
+  </div>
+  <div id="picture">
+    <div class="wrapper">
+      <%= f.file_field :file, class: "file-upload" %>
+      
+    </div>
+    <button disabled>Add Photo</button>
+  </div>
+  <div>
+    <label id="file-name"></label>
+  </div>
+  <p class="less_topspaced">
+    <input id="snipshot" type="checkbox" style="border:0;" />
+    <label for="snipshot" class="normal">&nbsp; I want to <b>edit</b>, <b>rotate</b>, or <b>crop</b> my photo first.</label>
+  </p>
+  <div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  </div>
+<% end %>

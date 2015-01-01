@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
+gem "carrierwave"
+gem "mini_magick"
+gem "fog"
 gem 'bcrypt'
 gem 'rails', '4.1.6'
 gem 'bootstrap-sass'

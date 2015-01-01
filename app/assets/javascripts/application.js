@@ -28,5 +28,14 @@ $(document).ready(function() {
       transitionStyle:"fade"
  
   });
- 
+
+		$("#photo_file").change(function() {
+	    var file = $(this).get(0);
+	    if (file.size && file.size > 2621440) {
+	        console.log("Hi")
+	    } else {
+	        console.log("Bye")
+	    }
+	});
+
 });
