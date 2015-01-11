@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def create
 
-  	@product = Product.create(product_params)
+  	@product = Product.build(product_params)
   	
   	if @product.save
   		flash[:success]= "Photo Created"
