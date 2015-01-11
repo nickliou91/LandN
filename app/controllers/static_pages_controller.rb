@@ -6,6 +6,9 @@ class StaticPagesController < ApplicationController
   end
 
   def product
+  	@products = Product.all
+  	@categories = Category.all
+  	
   end
 
   def about

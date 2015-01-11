@@ -2,6 +2,18 @@ Rails.application.routes.draw do
   
 
 
+  get 'sub_categories/new'
+
+  get 'sub_categories/index'
+
+  get 'sub_categories/show'
+
+  get 'categories/new'
+
+  get 'categories/index'
+
+  get 'categories/show'
+
   get 'products/new'
 
   root 'static_pages#home'
@@ -16,10 +28,26 @@ Rails.application.routes.draw do
   delete 'logout'      =>  'sessions#destroy'
   get 'admin'   =>'users#index'
 
+  get 'categories' =>'categories#index'
+  # get 'add_category' => 'categories#new'
+  post 'categories' => 'categories#create'
+  delete 'categories' => 'categories#destroy'
+
+
+  get 'sub_categories' => 'sub_categories#index'
+
+  get 'category_sub_categories' => 'category_sub_categories#index'
+
+
+  get 'add_product' => 'products#new'
 
   get 'users/new'
   resources :users
   resources :products
+  resources :categories
+  resources :sub_categories
+  resources :category_sub_categories
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

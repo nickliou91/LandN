@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230191855) do
+ActiveRecord::Schema.define(version: 20150103132749) do
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "category_sub_categories", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "sub_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", force: true do |t|
     t.string   "sku"
@@ -21,7 +35,15 @@ ActiveRecord::Schema.define(version: 20141230191855) do
     t.integer  "width"
     t.integer  "height"
     t.integer  "depth"
-    t.integer  "category_sub_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+    t.integer  "sub_category_id"
+  end
+
+  create_table "sub_categories", force: true do |t|
+    t.string   "title"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

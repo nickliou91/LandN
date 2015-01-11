@@ -1,0 +1,27 @@
+<h1><%= @category.title %></h1>
+
+<div class="row">
+<% if @category_sub_category.nil? %>
+<% @products.each do |prdouct| %>
+	<div class= "col-md-3 "> 
+		<%= product.sku %> 
+	
+	</div>
+	<% end %> 
+
+<% else %>
+	<% @category_sub_category.each do |sub| %>
+		<% sub_products = Product.where(sub_category_id: sub.sub_category_id) %>
+			<% sub_category = SubCategory.find(sub.sub_category_id) %>
+			<h3> <%= sub_category.title %> </h3>
+			<hr/>
+			<% sub_products.each do |product| %> 
+				<div class="col-md-4">
+				<%= product.sku %>
+				</div>
+			<% end %>
+			<br/><br/>
+	<% end %>
+
+<% end %>
+</div>

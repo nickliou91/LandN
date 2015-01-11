@@ -9,7 +9,7 @@ class ProductUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
-  process resize_to_fit: [560, nil]
+  process resize_to_fit: [300, nil]
 
   version :thumb do
     process resize_and_pad: [200, 200]
@@ -21,7 +21,8 @@ class ProductUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    # "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
     def extension_white_list

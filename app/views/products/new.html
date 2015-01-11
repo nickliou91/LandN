@@ -1,29 +1,44 @@
 <div class="row">
-  <section class="photo_form">
-    <%= render 'shared/photo_form' %>
-  </section>
+
+  <%= render 'layouts/adminsidebar' %>
+  <div class="col-md-4">
+   <%= form_for @product, :html => {:multipart => true} do |f| %>
+      <%= f.label :sku, "Product SKU" %>
+      <%= f.text_field :sku , class: 'form-control'%>
+
+      <%= f.label :width, "Width" %>
+      <%= f.text_field :width, class: 'form-control' %>
+
+      <%= f.label :height, "Height" %>
+      <%= f.text_field :height, class: 'form-control' %>
+
+      <%= f.label :depth, "Depth" %>
+      <%= f.text_field :depth, class: 'form-control' %>
+
+      <%= f.label :category_id, "Category" %>
+      <%= f.collection_select(:category_id, @categories, :id, :title, :include_blank =>" Please select an category") %>
+
+      <%= f.label :sub_category_id, "Sub_category" %>
+            <%= f.collection_select(:sub_category_id, @sub_categories, :id, :title, :include_blank =>" Please select an sub-category")%>
+      <%= f.label :file, "Upload Image" %>
+      <%= f.file_field :file %> 
+
+      <%= f.submit "Add Product", class: "btn btn-primary" %>
+
+
+      <% end %>
+    </div>
+
 </div>
 
-<script>
-$(document).ready(function(){
-	$('#photo_file').change(function(){
-		var element = document.getElementById("photo_file")
-		var array = element.value.split('\\')
-		var name = array[array.length - 1]
-		console.log(name)
-		$("#file-name").text(name)
-	});
 
 
 
-	$('#snipshot').change(function(){
-    if ($(this).is(":checked")) {
-      $('#new_photo').attr("action", "http://apps.pixlr.com/express/");
-      $('#photo_file').attr("name", "image");
-    } else {
-      $('#new_photo').attr("action", "/photos");
-      $('#photo_file').attr("name", "photo[file]");
-    }
-  });
-});
-</script>
+
+
+
+
+
+
+
+
