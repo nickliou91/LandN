@@ -1,11 +1,12 @@
 <h1><%= @category.title %></h1>
 
 <div class="row">
-<% if @category_sub_category.nil? %>
-<% @products.each do |prdouct| %>
+<% if @category_sub_category.count == 0%>
+
+<% @products.each do |product| %>
 	<div class= "col-md-3 "> 
-		<%= product.sku %> 
-	
+		<p> <%= product.sku %> </p> 
+		 <%= link_to image_tag(product.file, size:"200x200", alt: "Rails logo"), '#' %> 
 	</div>
 	<% end %> 
 

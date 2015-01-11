@@ -24,10 +24,17 @@ test:
 #   <<: *default
 #   database: db/production.sqlite3
 
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: project_production
-  pool: 5
-  username: 
-  password:
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_production
+#   pool: 5
+#   username: 
+#   password:
+
+  production:
+    adapter: mysql2
+    database: rails
+    username: rails
+    password: g7IV581L8a
+    host: localhost

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem "carrierwave"
+gem 'carrierwave_direct'
 gem "mini_magick"
 gem "fog"
 gem 'bcrypt'
@@ -48,6 +49,7 @@ end
 
 group :production do
 	gem 'pg'
+	# gem 'mysql2'
 	gem 'rails_12factor'
 end
 
