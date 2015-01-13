@@ -26,9 +26,19 @@ class ProductsController < ApplicationController
   def show 
   end
 
+  def update
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      flash[:success] ="Product Update"
+      redirect_to @product
+    else
+      render 'edit'
+    end
+
+  end
 
   private 
   	def product_params
-  		params.require(:product).permit(:sku, :file, :width, :height, :depth, :category_id, :sub_category_id)
+  		params.require(:product).permit(:sku, :name, :file, :width, :height, :depth, :category_id, :sub_category_id)
   	end
 end

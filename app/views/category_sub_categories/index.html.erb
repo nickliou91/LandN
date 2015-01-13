@@ -14,6 +14,7 @@
       </tr>
     </thead>
     <tbody>
+      <% if @category_sub_categories.any? %>
      <% @category_sub_categories.each do |cat| %>
       <tr> 
         <td> <%= cat.category_id %></td>
@@ -29,6 +30,7 @@
 
       </tr>
 
+     <% end %>
      <% end %>
     </tbody>
   </table>

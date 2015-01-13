@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   # get 'contact'   =>  'static_pages#contact'
   get 'contact' => 'contacts#new'
-  get 'product'   =>  'static_pages#product'
   get 'product_catalogs'   => 'static_pages#catalog'
   get 'about'     =>  'static_pages#about'
   get 'signup'    =>  'users#new'
@@ -40,9 +39,7 @@ Rails.application.routes.draw do
 
   get 'category_sub_categories' => 'category_sub_categories#index'
 
-
   get 'add_product' => 'products#new'
-
   get 'catalog' => 'catalogs#index'
   # get 'add_catalog' => 'catalogs#new'
 

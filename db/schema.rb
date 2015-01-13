@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113054719) do
+ActiveRecord::Schema.define(version: 20150113213309) do
 
   create_table "catalogs", force: true do |t|
     t.string   "file_url"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150113054719) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.integer  "sub_category_id"
+    t.string   "name"
   end
 
   create_table "sub_categories", force: true do |t|

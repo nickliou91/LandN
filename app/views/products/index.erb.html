@@ -1,0 +1,35 @@
+<div class ="row">
+<%= render 'layouts/adminsidebar' %>  
+
+
+<div class= "col-md-10"> 
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product SKU</th>
+        <th>Name</th>
+        <th>Height </th>
+        <th>Width</th>
+        <th>Depth</th>
+        <th>Category ID </th>
+        <th>Category Name </th>
+        <th>Sub Category ID </th>
+        <th>Sub Category Name </th>
+        <th>Picture URL </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @products.each do |product| %>
+      <tr>
+        <td><%= product.sku %></td>
+        <td><%= product.name %></td>
+        <td><td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', product, method: :put %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+
+  </div>
