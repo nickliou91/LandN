@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'contact'   =>  'static_pages#contact'
   get 'product'   =>  'static_pages#product'
+  get 'product_catalogs'   => 'static_pages#catalog'
   get 'about'     =>  'static_pages#about'
   get 'signup'    =>  'users#new'
   get 'login'      =>  'sessions#new'
@@ -41,12 +42,16 @@ Rails.application.routes.draw do
 
   get 'add_product' => 'products#new'
 
+  get 'catalog' => 'catalogs#index'
+  get 'add_catalog' => 'catalogs#new'
+
   get 'users/new'
   resources :users
   resources :products
   resources :categories
   resources :sub_categories
   resources :category_sub_categories
+  resources :catalogs
   
 
   # The priority is based upon order of creation: first created -> highest priority.

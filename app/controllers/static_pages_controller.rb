@@ -13,4 +13,9 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def catalog
+    @catalogs = Catalog.all 
+  end
+
 end

@@ -1,0 +1,19 @@
+<% provide(:title, "Product Catalogs") %> 
+<div class= "row">
+	<h2>Product Catalogs Download</h2>
+</div>
+<div class ="row">
+	<table>
+	<tbody> 
+
+		<% if @catalogs.any? %>
+			<% @catalogs.each do |catalog| %>
+				<tr>
+					<td><a href=<%= catalog.file_url %>> <%= catalog.title %> </a> </td>
+				</tr>
+			<% end %>
+		<% end %>
+	</tbody>
+	</table>
+
+</div>

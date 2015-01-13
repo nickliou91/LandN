@@ -19,6 +19,7 @@
 			<% sub_products.each do |product| %> 
 				<div class="col-md-4">
 				<%= product.sku %>
+				<%= link_to image_tag(product.file, size:"200x200", alt: "L&N Office System"), '#' %>			
 				</div>
 			<% end %>
 			<br/><br/>
