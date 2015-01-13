@@ -4,6 +4,47 @@
 
 <div class="row">
 	<div class= "col-sm-12"> 
+		 <%= form_tag(send_mail_path) do %>
+            <div class="form-group">
+                <%= label_tag 'name', 'Name' %>
+                <%= text_field_tag 'name', nil, class: 'form-control', placeholder: 'Your Name' %>
+            </div>
+           <div class="form-group">
+               <%= label_tag 'email', 'Email' %>
+               <%= email_field_tag 'email', nil, class: 'form-control', placeholder: 'Your Email Address' %>
+           </div>
+           <div class="form-group">
+               <%= label_tag 'comments', 'Comments' %>
+               <%= text_area_tag 'comments', nil, class: 'form-control', rows: 4, placeholder: 'Comments...' %>
+           </div>
+           <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
+       <% end %>
 
 	</div>
 </div>
+
+
+<div class="row">
+
+  <%= render 'layouts/adminsidebar' %>
+  <div class="col-md-4">
+   <%= form_for @contact, :html => {:multipart => true} do |f| %>
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name , class: 'form-control'%>
+
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, class: 'form-control' %>
+
+      <%= f.label :message, "Message" %>
+      <%= f.text_area :message, class: 'form-control' %>
+
+      <%= f.submit "Ask for Quotation", class: "btn btn-primary" %>
+
+
+      <% end %>
+    </div>
+
+</div>
+
+
+       

@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   # get 'static_pages/home'
 
-  get 'contact'   =>  'static_pages#contact'
+  # get 'contact'   =>  'static_pages#contact'
+  get 'contact' => 'contacts#new'
   get 'product'   =>  'static_pages#product'
   get 'product_catalogs'   => 'static_pages#catalog'
   get 'about'     =>  'static_pages#about'
@@ -52,6 +53,7 @@ Rails.application.routes.draw do
   resources :sub_categories
   resources :category_sub_categories
   resources :catalogs
+  resource  :contacts, only:[:new, :create]
   
 
   # The priority is based upon order of creation: first created -> highest priority.
