@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 		if @contact.valid?
 			#TO do send message here
 			flash[:success]= "Thank you sending us the enquiry!"
-			ContactusMailer.contactus_email(@contact).deliver!
+			ContactusMailer.quotation_notification(@contact).deliver!
 
 			redirect_to contact_path
 		else 
