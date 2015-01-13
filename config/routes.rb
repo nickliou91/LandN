@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get 'add_product' => 'products#new'
 
   get 'catalog' => 'catalogs#index'
-  get 'add_catalog' => 'catalogs#new'
+  # get 'add_catalog' => 'catalogs#new'
 
   get 'users/new'
   resources :users

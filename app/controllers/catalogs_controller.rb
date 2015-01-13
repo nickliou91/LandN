@@ -14,10 +14,10 @@ class CatalogsController < ApplicationController
 		@catalog = Catalog.create(catalog_params)
 		 	if @catalog.save
   		flash[:success]= "Photo Created"
-  		redirect_to add_catalog_path
+  		redirect_to catalog_path
   	else
   		flash[:danger]= "Photo not created successful"
-  		redirect_to add_catalog_path
+  		redirect_to catalog_path
   	end
 
 	end
