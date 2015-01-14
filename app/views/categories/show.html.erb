@@ -5,12 +5,12 @@
 
 <% @products.each do |product| %>
 	<div class= "col-md-3 "> 
-		 <%= link_to image_tag(product.file, size:"200x200", alt: "Rails logo"), '#' %> </br>
+		 <%= link_to image_tag(product.file, size:"200x250", alt: "Rails logo"), '#' %> </br>
 		 <strong> <%= product.sku %> </strong> </br>
 	 	 <strong><%= product.name%> </strong> </br>
-		Height:<%= product.height%> </br>
-		Width:<%= product.width%></br>
-		Depth:<%= product.depth%> 
+		<%= product.height%> </br>
+		<%= product.width%></br>
+		<%= product.depth%> 
 
 	</div>
 	<% end %> 
@@ -24,12 +24,12 @@
 			<% sub_products.each do |product| %> 
 				<div class="col-md-4">
 				
-				<%= link_to image_tag(product.file, size:"200x200", alt: "L&N Office System"), '#' %>	</br>
+				<%= link_to image_tag(product.file, size:"200x250", alt: "L&N Office System"), '#' %>	</br>
 					<strong><%= product.sku %> </strong></br>
 					<strong><%= product.name%> </strong> </br>
-					Height:<%= product.height%> </br>
-					Width:<%= product.width%></br>
-					Depth:<%= product.depth%> 		
+					<%= product.height%> </br>
+					<%= product.width%></br>
+					<%= product.depth%> 		
  		
 		
 				</div>
