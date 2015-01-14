@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   	if @user.save
   		# redirect_to @user = redirect_to user_url(@user)
   		log_in @user
-  		flash[:success] = "Welcome to the L & N Office Furniture Admin"
+  		flash[:success] = "Welcome to the L & N Office Furniture"
   		redirect_to root_path
   	else
   		render 'new'

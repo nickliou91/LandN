@@ -25,8 +25,8 @@
         <td><%= product.sku %></td>
         <td><%= product.name %></td>
         <td><td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', product, method: :put %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
      <% end %>
     </tbody>

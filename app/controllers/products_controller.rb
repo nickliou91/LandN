@@ -12,21 +12,32 @@ class ProductsController < ApplicationController
   	
   	if @product.save
   		flash[:success]= "Photo Created"
-  		redirect_to add_product_path
+  		redirect_to @product
   	else
-  		redirect_to add_product_path
+  		redirect_to @product
   	end
 
   end
 
 
   def index
+    @products = Product.all
   end
 
-  def show 
+  def show
+
+  
   end
 
-  def update
+  def edit
+    @product = Product.find(params[:id])
+    @categories =Category.all
+    @sub_categories = SubCategory.all 
+
+
+  end
+  def update 
+
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       flash[:success] ="Product Update"
@@ -39,6 +50,6 @@ class ProductsController < ApplicationController
 
   private 
   	def product_params
-  		params.require(:product).permit(:sku, :name, :file, :width, :height, :depth, :category_id, :sub_category_id)
+  		params.require(:product).permit(:sku,:user_id, :name, :file, :width, :height, :depth, :category_id, :sub_category_id)
   	end
 end

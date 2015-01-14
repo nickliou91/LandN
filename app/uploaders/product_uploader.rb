@@ -9,7 +9,7 @@ class ProductUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
-  process resize_to_fit: [300, 300]
+  process resize_to_fit: [300, 350]
 
   version :thumb do
     process resize_and_pad: [200, 200]

@@ -1,5 +1,5 @@
 <div class="row">
-
+  <h2> Edit Products </h2>
   <%= render 'layouts/adminsidebar' %>
   <div class="col-md-4">
    <%= form_for @product, :html => {:multipart => true} do |f| %>
@@ -9,7 +9,6 @@
 
       <%= f.label :name, "Name" %>
       <%= f.text_field :name , class: 'form-control'%>
-      
        <%= f.label :height, "Height" %>
       <%= f.text_field :height, class: 'form-control' %>
       <%= f.label :width, "Width" %>
@@ -27,22 +26,10 @@
       <%= f.label :file, "Upload Image" %>
       <%= f.file_field :file %> 
 
-      <%= f.submit "Add Product", class: "btn btn-primary" %>
+      <%= f.submit "Update", class: "btn btn-primary" %>
 
 
       <% end %>
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-

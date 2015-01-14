@@ -4,10 +4,8 @@ class ContactusMailer < ActionMailer::Base
 
   def quotation_notification(contact)
   	@contact = contact
-  	mail(to: "nickliou91@gmail.com", 
-  		subject:" Message from contact us",
-  		template_name: 'quotation_notification' 
-  		)
+  	mail(to: 'nickliou91@gmail.com', subject:" Message from contact us")
+  		
 
   end
 

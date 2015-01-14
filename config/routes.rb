@@ -3,23 +3,17 @@ Rails.application.routes.draw do
 
 
   get 'sub_categories/new'
-
   get 'sub_categories/index'
-
   get 'sub_categories/show'
 
   get 'categories/new'
-
   get 'categories/index'
-
   get 'categories/show'
 
-  get 'products/new'
+  # get 'products/new'
+  # get 'products/index'
 
   root 'static_pages#home'
-  # get 'static_pages/home'
-
-  # get 'contact'   =>  'static_pages#contact'
   get 'contact' => 'contacts#new'
   get 'product_catalogs'   => 'static_pages#catalog'
   get 'about'     =>  'static_pages#about'
@@ -39,7 +33,12 @@ Rails.application.routes.draw do
 
   get 'category_sub_categories' => 'category_sub_categories#index'
 
-  get 'add_product' => 'products#new'
+  get 'add_products' => 'products#new'
+  get 'products' => 'products#index'
+  post 'products' => 'products#create'
+  delete 'products' =>'products#destroy' 
+
+
   get 'catalog' => 'catalogs#index'
   # get 'add_catalog' => 'catalogs#new'
 
