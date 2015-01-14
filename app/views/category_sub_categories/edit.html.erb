@@ -1,0 +1,24 @@
+
+
+<div class="row">
+	<%= render 'layouts/adminsidebar' %>  
+	<div class= "col-md-4">
+	</diV>
+	<div class= "col-md-4">
+		<h2> Add Category-Sub_Category </h2>
+		<%= form_for @category_sub_category do |f| %>
+
+	      <%= f.label :category_id, "Category" %>
+	      <%= f.collection_select(:category_id, @categories, :id, :title, :include_blank =>" Please select an category") %>
+	<!--       <%= f.text_field :category_id , class: 'form-control'%>
+	 -->
+	      <%= f.label :sub_category_id, "Sub_category" %>
+	            <%= f.collection_select(:sub_category_id, @sub_categories, :id, :title, :include_blank =>" Please select an sub-category")%>
+
+	<!--       <%= f.text_field :sub_category_id, class: 'form-control' %>
+	 -->
+	      <%= f.submit "Save Changes", class: "btn btn-primary" %>
+	    <% end %>
+
+	</div>
+</div>

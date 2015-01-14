@@ -30,6 +30,25 @@ class CategorySubCategoriesController < ApplicationController
 	def destroy
 	end
 
+
+	def edit
+		@categories = Category.all
+		@sub_categories = SubCategory.all
+    @category_sub_category =CategorySubCategory.find(params[:id])
+  end
+
+  def update 
+
+		@category_sub_category =CategorySubCategory.find(params[:id])    
+		if @category_sub_category.update_attributes(category_sub_category_params)
+      flash[:success] ="Category Sub-Category Update"
+      redirect_to action:"index"
+    else
+      render 'edit'
+    end
+
+  end
+
 	private
 		def category_sub_category_params
 			params.require(:category_sub_category).permit(:category_id, :sub_category_id)

@@ -32,18 +32,26 @@ class CategoriesController < ApplicationController
   			
   			 @products = Product.where(category_id: @category.id)
   		end
-
-
-  	# @category_sub_category = CategorySubCategory.find_by category_id: params[:id]
-  	# if @category && @category_sub_category.sub_category_id != nil 
-  	# 	@product = Product.where(category_id: @category.id) 
-  	# end
   	
   end
-  
+
   def edit
 
+    @category =Category.find(params[:id])
   end
+
+  def update 
+
+    @category = Category.find(params[:id])
+    if @category.update_attributes(category_params)
+      flash[:success] ="Category Update"
+      redirect_to action:"index"
+    else
+      render 'edit'
+    end
+
+  end
+
 
   def destroy
   	Category.find(params[:id]).destroy

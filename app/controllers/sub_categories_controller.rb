@@ -30,6 +30,25 @@ def destroy
 
 end
 
+  def edit
+
+    @sub_category =SubCategory.find(params[:id])
+  end
+
+  def update 
+
+    @sub_category = SubCategory.find(params[:id])
+    if @sub_category.update_attributes(sub_category_params)
+      flash[:success] ="Sub-Category Update"
+      redirect_to action:"index"
+    else
+      render 'edit'
+    end
+
+  end
+
+
+
 private 
 	def sub_category_params
 		params.require(:sub_category).permit(:title, :description)
