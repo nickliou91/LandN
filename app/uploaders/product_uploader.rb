@@ -9,10 +9,10 @@ class ProductUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
-  process resize_to_fit: [300, 350]
+  # process resize_to_fit: [300, 350]
 
   version :thumb do
-    process resize_and_pad: [200, 200]
+    process resize_and_pad: [350, 250]
   end
 
   # Choose what kind of storage to use for this uploader:

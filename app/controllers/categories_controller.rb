@@ -24,13 +24,17 @@ class CategoriesController < ApplicationController
   def show
 
   	@category= Category.find(params[:id])
+    @i = 0 ;
   	@category_sub_category = CategorySubCategory.where(category_id: @category.id)
   	# byebug
   	# @category_sub_category.each do |cat|
    
   		if @category_sub_category.count == 0 
   			
-  			 @products = Product.where(category_id: @category.id)
+  			 @products = Product.where(category_id: @category.id).order("sku ASC")
+      
+    
+
   		end
   	
   end

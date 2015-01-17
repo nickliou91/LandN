@@ -4,37 +4,44 @@
 <% if @category_sub_category.count == 0%>
 
 <% @products.each do |product| %>
-	<div class= "col-md-3 "> 
-		 <%= link_to image_tag(product.file, size:"200x250", alt: "Rails logo"), '#' %> </br>
+
+		<div class= "col-md-3 pro-img-holder"> 
+
+		 <div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %> </div> </br>
+		 <div class="pro-desc">
 		 <strong> <%= product.sku %> </strong> </br>
+	 	 <% if product.name %> 
 	 	 <strong><%= product.name%> </strong> </br>
+	 	 <% end %>
 		<%= product.height%> </br>
 		<%= product.width%></br>
 		<%= product.depth%> 
-
 	</div>
-	<% end %> 
-
+	</div>
+	<% end %>
 <% else %>
 	<% @category_sub_category.each do |sub| %>
-		<% sub_products = Product.where(sub_category_id: sub.sub_category_id) %>
+		<% sub_products = Product.where(sub_category_id: sub.sub_category_id).order("sku ASC") %>
 			<% sub_category = SubCategory.find(sub.sub_category_id) %>
 			<h3> <%= sub_category.title %> </h3>
 			<hr/>
+		
 			<% sub_products.each do |product| %> 
-				<div class="col-md-4">
+
+				<div class="col-md-4 pro-img-holder">
 				
-				<%= link_to image_tag(product.file, size:"200x250", alt: "L&N Office System"), '#' %>	</br>
+				<div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %>	</div></br><div class="pro-desc">
 					<strong><%= product.sku %> </strong></br>
 					<strong><%= product.name%> </strong> </br>
 					<%= product.height%> </br>
 					<%= product.width%></br>
 					<%= product.depth%> 		
- 		
+ 					</div>
 		
 				</div>
+			
 			<% end %>
-			<br/></br></br>
+			</br></br></br>
 	<% end %>
 
 <% end %>
