@@ -21,7 +21,7 @@
 	<% end %>
 <% else %>
 	<% @category_sub_category.each do |sub| %>
-		<% sub_products = Product.where(sub_category_id: sub.sub_category_id).order("sku ASC") %>
+		<% sub_products = Product.where(sub_category_id: sub.sub_category_id).order("product_order ASC") %>
 			<% sub_category = SubCategory.find(sub.sub_category_id) %>
 			<h3> <%= sub_category.title %> </h3>
 			<hr/>

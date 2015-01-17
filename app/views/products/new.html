@@ -3,13 +3,18 @@
   <%= render 'layouts/adminsidebar' %>
   <div class="col-md-4">
    <%= form_for @product, :html => {:multipart => true} do |f| %>
+    
+
+      <%= f.label :sku, "Product Order in Category:" %>
+      <%= f.text_field :product_order , class: 'form-control'%>
+      
       <%= f.label :sku, "Product SKU" %>
       <%= f.text_field :sku , class: 'form-control'%>
 
 
       <%= f.label :name, "Name" %>
       <%= f.text_field :name , class: 'form-control'%>
-      
+
        <%= f.label :height, "Height" %>
       <%= f.text_field :height, class: 'form-control' %>
       <%= f.label :width, "Width" %>
