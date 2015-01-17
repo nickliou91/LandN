@@ -7,17 +7,17 @@
 
 		<div class= "col-md-3 pro-img-holder"> 
 
-		 <div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %> </div> </br>
-		 <div class="pro-desc">
-		 <strong> <%= product.sku %> </strong> </br>
-	 	 <% if product.name %> 
-	 	 <strong><%= product.name%> </strong> </br>
-	 	 <% end %>
-		<%= product.height%> </br>
-		<%= product.width%></br>
-		<%= product.depth%> 
-	</div>
-	</div>
+			 <div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %> </div> </br>
+			 <div class="pro-desc">
+			 <p><strong> <%= product.sku %> </strong><p>
+		 	 <% if product.name %> 
+		 	 <p><strong><%= product.name%> </strong><p>
+		 	 <% end %>
+			<p><%= product.height%></p>
+			<p><%= product.width%></p>
+			<p><%= product.depth%></p> 
+		</div>
+		</div>
 	<% end %>
 <% else %>
 	<% @category_sub_category.each do |sub| %>
