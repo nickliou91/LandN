@@ -28,11 +28,13 @@
 		
 			<% sub_products.each do |product| %> 
 
-				<div class="col-md-4 pro-img-holder">
+				<div class="col-md-3 pro-img-holder">
 				
-				<div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %>	</div></br><div class="pro-desc">
-					<strong><%= product.sku %> </strong></br>
-					<strong><%= product.name%> </strong> </br>
+				<div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %>	</div></br>
+					<div class="pro-desc">
+						 <% if product.name %> 
+	 	 					<strong><%= product.name%> </strong> </br>
+	 					 <% end %>
 					<%= product.height%> </br>
 					<%= product.width%></br>
 					<%= product.depth%> 		
