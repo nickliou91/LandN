@@ -7,7 +7,7 @@
 
 		<div class= "col-md-3 pro-img-holder"> 
 
-			 <div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %> </div> </br>
+			 <div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %> </div>
 			 <div class="pro-desc">
 			 <p><strong> <%= product.sku %> </strong><p>
 		 	 <% if product.name %> 
@@ -30,15 +30,15 @@
 
 				<div class="col-md-3 pro-img-holder">
 				
-				<div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %>	</div></br>
+				<div class="pro-img"><%= link_to image_tag(product.file, size:"230x300", alt: "L&N Office System"), '#' %>	</div>
 					<div class="pro-desc">
-						<strong> <%= product.sku %> </strong> </br>
+						<p><strong> <%= product.sku %> </strong><p>
 						 <% if product.name %> 
-	 	 					<strong><%= product.name%> </strong> </br>
+	 	 					<p><strong><%= product.name%> </strong></p>
 	 					 <% end %>
-					<%= product.height%> </br>
-					<%= product.width%></br>
-					<%= product.depth%> 		
+					<p><%= product.height%></p>
+					<p><%= product.width%></p>
+					<p><%= product.depth%> 	</p>	
  					</div>
 		
 				</div>
