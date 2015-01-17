@@ -20,8 +20,12 @@
       <tr>
         <td><%= product.sku %></td>
         <td><%= product.name %></td>
+        <% if product.category_id %>
         <% category = Category.find(product.category_id) %>
         <td><%= category.title%> </td>
+          <% else %>
+           <td>No category </td>
+          <% end %>
         <% if product.sub_category_id %>
           <% sub_category = SubCategory.find(product.sub_category_id) %>
           <td><%= sub_category.title %> </td>
