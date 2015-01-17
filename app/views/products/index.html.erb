@@ -8,15 +8,11 @@
       <tr>
         <th>Product SKU</th>
         <th>Name</th>
-        <th>Height </th>
-        <th>Width</th>
-        <th>Depth</th>
-        <th>Category ID </th>
+        
         <th>Category Name </th>
-        <th>Sub Category ID </th>
         <th>Sub Category Name </th>
-        <th>Picture URL </th>
-        <th>Action</th>
+<!--         <th>Picture URL </th>
+ -->        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +20,15 @@
       <tr>
         <td><%= product.sku %></td>
         <td><%= product.name %></td>
+        <% category = Category.find(product.category_id) %>
+        <td><%= category.title%> </td>
+        <% if product.sub_category_id %>
+          <% sub_category = SubCategory.find(product.sub_category_id) %>
+          <td><%= sub_category.title %> </td>
+          <% else %>
+            <td>No sub-category</td>
+            <% end %>
+
         <td><td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
