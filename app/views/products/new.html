@@ -5,7 +5,7 @@
    <%= form_for @product, :html => {:multipart => true} do |f| %>
     
 
-      <%= f.label :sku, "Product Order in Category:" %>
+      <%= f.label :product_order, "Product Order in Category:" %>
       <%= f.text_field :product_order , class: 'form-control'%>
       
       <%= f.label :sku, "Product SKU" %>
